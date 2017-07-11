@@ -46,6 +46,7 @@
     <Compile Include="Company.cs" />
     <Compile Include="Developer.cs" />
     <Compile Include="DevTask.cs" />
+    <Compile Include="Interfaces\ICompareTask.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Filler.cs" />
     <Compile Include="Manager.cs" />

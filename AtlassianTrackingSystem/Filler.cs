@@ -10,7 +10,7 @@ namespace AtlassianTrackingSystem
 {
    public static class Filler
     {
-       public enum Type {Developer, Tester, Task};
+       //public enum Type {Developer, Tester, Task};
 
         // public static List<object> FillSomething(string type, int number)
         /// <summary>
@@ -19,14 +19,18 @@ namespace AtlassianTrackingSystem
         /// <param name="type">  Type of entity to generate a list for </param>
         /// <param name="amount"> Quontity of entities </param>
         /// <returns></returns>
-        public static List<T> Fill<T>(int amount) where T : new()
+        public static List<T> Fill<T>(int amount) where T : class, new()
         {
             var list = new List<T>();
-            while (amount>0)
+            if (amount > 1)
             {
-                var instance = new T();
-                list.Add(instance);
-                amount--;
+                while (amount > 0)
+                {
+                    var instance = new T();
+                    list.Add(instance);
+                    amount--;
+                }
+              
             }
             return list;
         }
